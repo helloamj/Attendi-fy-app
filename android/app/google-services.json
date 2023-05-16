@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "847765205053",
+    "project_id": "attendi-fy-2b84a",
+    "storage_bucket": "attendi-fy-2b84a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847765205053:android:299a72ce10b70dc95cfa54",
+        "android_client_info": {
+          "package_name": "com.example.attendify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847765205053-loa83ddtp3pgiook7lpajm2dk85ms7u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxzptLRrzJwxrsuZHbokb5uIrnj-PFvGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847765205053-loa83ddtp3pgiook7lpajm2dk85ms7u1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "847765205053-64cf5lvrs63sdh26aune4psv1bo1td95.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.attendify"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
