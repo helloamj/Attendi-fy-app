@@ -16,6 +16,11 @@ Attendi-fy is a Flutter app designed to help students track their attendance eff
 2. Navigate to the project directory: `cd attendi-fy`
 3. Run the app: `flutter run`
 
+## Install .apk
+
+[![Install with Attendi-fy](https://img.shields.io/badge/Install%20with-Attendi--fy-blue)](https://link-to-installation)
+
+
 ## Screenshots
 
 <p align="center">
