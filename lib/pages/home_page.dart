@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   _HomePageState({required this.analytics});
+  _HomePageState({required this.analytics});
   final FirebaseAnalytics analytics;
   @override
   Widget build(BuildContext context) {
@@ -54,23 +54,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.language),
-              title: const Text('Website'),
-              onTap: () async{
-                var uri = Uri.parse("https://attendi-fy.epizy.com");
-                if (await canLaunchUrl(uri)) {
-                  await launchUrl(uri,mode: LaunchMode.externalApplication );
-                } else {
-                  // can't launch url
-                }
-              },
-            ),
-            ListTile(
               leading: const Icon(Icons.group),
               title: const Text('About us'),
               onTap: () {
-                Navigator.push(context,
-                    CupertinoPageRoute(builder: (context) => const AboutUsPage()));
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (context) => const AboutUsPage()));
               },
             ),
             ListTile(
@@ -87,8 +77,10 @@ class _HomePageState extends State<HomePage> {
               leading: const Icon(Icons.diversity_2),
               title: const Text('About Team Legacy'),
               onTap: () {
-                Navigator.push(context,
-                    CupertinoPageRoute(builder: (context) => const AboutTeam()));
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (context) => const AboutTeam()));
               },
             ),
             ListTile(
@@ -120,108 +112,111 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Center(
-          child: SingleChildScrollView(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              DefaultTextStyle(
-                style: GoogleFonts.roboto(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 65,
+          child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                DefaultTextStyle(
+                  style: GoogleFonts.roboto(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 60,
+                  ),
+                  textAlign: TextAlign.center,
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      TypewriterAnimatedText('Welcome to ATTENDIFY',
+                          textAlign: TextAlign.center),
+                    ],
+                  ),
                 ),
-                textAlign: TextAlign.center,
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    TypewriterAnimatedText('Welcome to ATTENDIFY',
-                        textAlign: TextAlign.center),
-                  ],
+                const SizedBox(
+                  height: 25,
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Text(
-                "Attendance is a Bug!\nDon't Worry We Have Got A Solution For You",
-                style: GoogleFonts.roboto(
-                  fontSize: 25,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xff198754).withOpacity(0.5),
-                      spreadRadius: 10,
-                      blurRadius: 20,
-                      offset: const Offset(0, 0),
-                    ),
-                  ],
-                ),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        analytics.logEvent(name: 'Button Clicked');
-                        Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                                builder: (context) => const Calculator()));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff198754),
-                        padding: const EdgeInsets.all(15),
-                      ),
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.calculate,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          Text(
-                            ' Attendance Calculator',
-                            style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              TextButton(onPressed: ()async {
-                var uri = Uri.parse("https://t.me/+SUuVpa4fIghmMWZl");
-                if (await canLaunchUrl(uri)) {
-                  await launchUrl(uri, mode: LaunchMode.externalApplication);
-                } else {
-                  // can't launch url
-                }
-              }, 
-              
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                const Icon(Icons.warning,color: Colors.yellow),
                 Text(
-                            ' Click Here for Further App Updates',
-                            style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                              color: Colors.yellow,
+                  "Attendance is a Bug!\nDon't Worry We Have Got A Solution For You",
+                  style: GoogleFonts.roboto(
+                    fontSize: 25,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xff198754).withOpacity(0.5),
+                        spreadRadius: 10,
+                        blurRadius: 20,
+                        offset: const Offset(0, 0),
+                      ),
+                    ],
+                  ),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          analytics.logEvent(name: 'Button Clicked');
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => const Calculator()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff198754),
+                          padding: const EdgeInsets.all(15),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.calculate,
+                              color: Colors.white,
+                              size: 20,
                             ),
-                          ),
-              ],))
-            ]),
+                            Text(
+                              ' Attendance Calculator',
+                              style: GoogleFonts.roboto(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                ),
+                // const SizedBox(
+                //   height: 50,
+                // ),
+                // TextButton(onPressed: ()async {
+                //   var uri = Uri.parse("https://t.me/+SUuVpa4fIghmMWZl");
+                //   if (await canLaunchUrl(uri)) {
+                //     await launchUrl(uri, mode: LaunchMode.externalApplication);
+                //   } else {
+                //     // can't launch url
+                //   }
+                // },
+
+                // child: Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //   const Icon(Icons.warning,color: Colors.yellow),
+                //   Text(
+                //               ' Click Here for Further App Updates',
+                //               style: GoogleFonts.roboto(
+                //                 fontWeight: FontWeight.bold,
+                //                 fontSize: 17,
+                //                 color: Colors.yellow,
+                //               ),
+                //             ),
+                // ],))
+              ]),
+        ),
       )),
     );
   }

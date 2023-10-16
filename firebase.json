@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "attendi-fy-legacy",
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

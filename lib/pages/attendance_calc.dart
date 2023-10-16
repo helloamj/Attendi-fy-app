@@ -29,17 +29,23 @@ class CalculatorState extends State<Calculator> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             Text(
               'Attendance Calculator',
               style: GoogleFonts.roboto(
-                fontWeight: FontWeight.bold,
-                fontSize: 50,
+                fontWeight: FontWeight.w700,
+                fontSize: MediaQuery.of(context).size.height / 20,
               ),
               textAlign: TextAlign.center,
             ),
+            const SizedBox(
+              height: 20,
+            ),
             const PasteButton(),
+            const SizedBox(
+              height: 20,
+            ),
             Expanded(
               child: Container(
                 margin: const EdgeInsets.all(20),

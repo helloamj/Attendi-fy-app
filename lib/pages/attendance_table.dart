@@ -39,27 +39,35 @@ class _AttendanceTableState extends State<AttendanceTable> {
             ),
             Container(
               margin: const EdgeInsets.all(20),
+              height: MediaQuery.of(context).size.height / 2,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: const Color(0xff198754),
-                border: Border.all(
-                  color:  Colors.white,
-                  width: 2,
-                ),
-                
-              ),
-              child: ClipRRect(
-                  child: Image.asset(Memes.getmeme())),
+                  color: const Color(0xff198754),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2,
+                  ),
+                  image: DecorationImage(
+                      image: AssetImage(Memes.getmeme()), fit: BoxFit.fill)),
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Table(
-                defaultColumnWidth: const FixedColumnWidth(125),
-                columnWidths: const {
-                  2: FixedColumnWidth(300),
-                },
-                border: TableBorder.all(
-                    color: Colors.white, style: BorderStyle.solid),
-                children: rep.gettable(),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  physics: ScrollPhysics(),
+                  child: Table(
+                    defaultColumnWidth: const FixedColumnWidth(125),
+                    columnWidths: const {
+                      2: FixedColumnWidth(300),
+                    },
+                    border: TableBorder.all(
+                      color: Colors.white,
+                      style: BorderStyle.solid,
+                    ),
+                    children: rep.gettable(),
+                  ),
+                ),
               ),
             ),
           ],
