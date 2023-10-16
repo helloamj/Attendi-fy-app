@@ -24,28 +24,30 @@ class CalculatorState extends State<Calculator> {
         backgroundColor: const Color(0xff198754),
       ),
       body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'Attendance Calculator',
-                style: GoogleFonts.roboto(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 50,
-                ),
-                textAlign: TextAlign.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 30,
+            ),
+            Text(
+              'Attendance Calculator',
+              style: GoogleFonts.roboto(
+                fontWeight: FontWeight.w700,
+                fontSize: MediaQuery.of(context).size.height / 20,
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const PasteButton(),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const PasteButton(),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: Container(
                 margin: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -56,11 +58,12 @@ class CalculatorState extends State<Calculator> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset('assets/tutorial/tutorial.jpeg')),
-              )
-            ],
-          ),
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset('assets/tutorial/tutorial.jpeg'),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

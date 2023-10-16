@@ -105,7 +105,7 @@ class _PasteButtonState extends State<PasteButton> {
       children: [
         const SizedBox(height: 16),
         SizedBox(
-          width: width / 1.6,
+          width: width / 1.5,
           child: TextField(
             controller: prcntcontroller,
             style: const TextStyle(color: Colors.black),
