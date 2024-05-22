@@ -31,13 +31,10 @@ Attendi-fy is a Flutter app designed to help students track their attendance eff
 </p>
 
 ## Support and Contact 📧
-If you have any questions, suggestions, or need assistance, please reach out to us at [email@example.com].
+If you have any questions, suggestions, or need assistance, please reach out to us at [jainkunal129@gmail.com].
 
 ## Contributing
 We welcome contributions from anyone who finds this project interesting and wants to contribute. Feel free to submit a pull request or open an issue with your ideas or bug reports.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
 
 ## About Attendi-fy App 🌟
 Attendi-fy was created with the goal of simplifying attendance tracking for students. With its intuitive interface and smart calculations, it aims to empower students to stay on top of their attendance requirements effortlessly.
