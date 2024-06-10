@@ -1,11 +1,1 @@
-{
-  "hosting": {
-    "site": "attendi-fy-legacy",
-    "public": "build/web",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
-}
+{"hosting":{"site":"attendi-fy-legacy","public":"build/web","ignore":["firebase.json","**/.*","**/node_modules/**"]},"flutter":{"platforms":{"android":{"default":{"projectId":"attendi-fy-2b84a","appId":"1:847765205053:android:299a72ce10b70dc95cfa54","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"attendi-fy-2b84a","configurations":{"android":"1:847765205053:android:299a72ce10b70dc95cfa54","ios":"1:847765205053:ios:27b5644656afe9595cfa54","web":"1:847765205053:web:f4657b130bd703d35cfa54"}}}}}}

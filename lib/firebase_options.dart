@@ -21,15 +21,9 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -60,5 +54,24 @@ class DefaultFirebaseOptions {
     authDomain: 'attendi-fy-2b84a.firebaseapp.com',
     storageBucket: 'attendi-fy-2b84a.appspot.com',
     measurementId: 'G-CBK726PTE0',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCcKjA48F6FL2F5Gxm2NrvEWBIr4baRpjs',
+    appId: '1:847765205053:ios:27b5644656afe9595cfa54',
+    messagingSenderId: '847765205053',
+    projectId: 'attendi-fy-2b84a',
+    storageBucket: 'attendi-fy-2b84a.appspot.com',
+    iosClientId:
+        '847765205053-64cf5lvrs63sdh26aune4psv1bo1td95.apps.googleusercontent.com',
+    iosBundleId: 'com.example.attendify',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyAxzptLRrzJwxrsuZHbokb5uIrnj-PFvGE',
+    appId: '1:847765205053:android:299a72ce10b70dc95cfa54',
+    messagingSenderId: '847765205053',
+    projectId: 'attendi-fy-2b84a',
+    storageBucket: 'attendi-fy-2b84a.appspot.com',
   );
 }
