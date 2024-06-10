@@ -38,6 +38,7 @@ class _ResultPageState extends State<ResultPage> {
             ? null
             : AppBar(
                 elevation: 0,
+                toolbarHeight: 100,
                 backgroundColor: Colors.transparent,
                 automaticallyImplyLeading: false,
                 actions: [
