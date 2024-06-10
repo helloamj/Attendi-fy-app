@@ -1,3 +1,4 @@
+import 'package:animate_gradient/animate_gradient.dart';
 import 'package:attendify/src/view/global_widgets.dart';
 import 'package:attendify/theme/app_pallete.dart';
 import 'package:flutter/material.dart';
@@ -14,15 +15,16 @@ class AboutUsPage extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: const PersistantFAB(),
-      body: MovingBackground(
-        animationType: AnimationType.translation,
-        backgroundColor: AppPallete.backgroundColor,
-        circles: const [
-          MovingCircle(color: Colors.purple),
-          MovingCircle(color: Colors.deepPurple),
-          MovingCircle(color: Colors.orange),
-          MovingCircle(color: Colors.orangeAccent),
-          MovingCircle(color: Colors.white12),
+      body: AnimateGradient(
+        primaryColors: const [
+          Colors.pink,
+          Colors.pinkAccent,
+          Colors.white,
+        ],
+        secondaryColors: const [
+          Colors.blue,
+          Colors.blueAccent,
+          Colors.white,
         ],
         child: LayoutBuilder(builder: (context, constraints) {
           return Padding(

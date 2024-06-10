@@ -53,6 +53,7 @@ dependencies:
   percent_indicator: ^4.2.3
   loader_overlay: ^4.0.0
   fluttertoast: ^8.2.6
+  animate_gradient: ^0.0.3
   
 dev_dependencies:
   flutter_test:

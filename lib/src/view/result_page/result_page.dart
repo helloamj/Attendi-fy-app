@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:developer' as D;
+import 'package:animate_gradient/animate_gradient.dart';
 import 'package:attendify/src/controller/result_page_provider.dart';
 import 'package:attendify/src/model/subject_model.dart';
 import 'package:attendify/src/view/global_widgets.dart';
@@ -37,6 +38,7 @@ class _ResultPageState extends State<ResultPage> {
         appBar: Provider.of<ResultsProvider>(context).subjects.isEmpty
             ? null
             : AppBar(
+                toolbarHeight: 100,
                 elevation: 0,
                 backgroundColor: Colors.transparent,
                 automaticallyImplyLeading: false,
@@ -56,15 +58,16 @@ class _ResultPageState extends State<ResultPage> {
               ),
         floatingActionButtonLocation: ExpandableFab.location,
         floatingActionButton: const PersistantFAB(),
-        body: MovingBackground(
-          animationType: AnimationType.translation,
-          backgroundColor: AppPallete.backgroundColor,
-          circles: const [
-            MovingCircle(color: Colors.purple),
-            MovingCircle(color: Colors.deepPurple),
-            MovingCircle(color: Colors.orange),
-            MovingCircle(color: Colors.orangeAccent),
-            MovingCircle(color: Colors.white12),
+        body: AnimateGradient(
+          primaryColors: const [
+            Colors.pink,
+            Colors.pinkAccent,
+            Colors.white,
+          ],
+          secondaryColors: const [
+            Colors.blue,
+            Colors.blueAccent,
+            Colors.white,
           ],
           child: Consumer<ResultsProvider>(builder: (context, provider, child) {
             D.log(

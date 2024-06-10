@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:developer';
 
+import 'package:animate_gradient/animate_gradient.dart';
 import 'package:attendify/helper/on_paste_handler.dart';
 import 'package:attendify/helper/router.dart';
 import 'package:attendify/src/model/subject_model.dart';
@@ -69,15 +70,16 @@ class _InfoFeedPageState extends State<InfoFeedPage> {
         child: Scaffold(
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: const PersistantFAB(),
-      body: MovingBackground(
-        animationType: AnimationType.translation,
-        backgroundColor: AppPallete.backgroundColor,
-        circles: const [
-          MovingCircle(color: Colors.purple),
-          MovingCircle(color: Colors.deepPurple),
-          MovingCircle(color: Colors.orange),
-          MovingCircle(color: Colors.orangeAccent),
-          MovingCircle(color: Colors.white12),
+      body: AnimateGradient(
+        primaryColors: const [
+          Colors.pink,
+          Colors.pinkAccent,
+          Colors.white,
+        ],
+        secondaryColors: const [
+          Colors.blue,
+          Colors.blueAccent,
+          Colors.white,
         ],
         child: Center(
           child: LayoutBuilder(builder: (context, constraints) {
