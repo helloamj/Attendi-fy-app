@@ -42,7 +42,7 @@ class _LandingPageState extends State<LandingPage> {
         ],
         child: LayoutBuilder(builder: (context, constraints) {
           return constraints.maxWidth < 600
-              ? SingleChildScrollView(child: _mobileLandingWidget(constraints))
+              ? _mobileLandingWidget(constraints)
               : _pcLandingWidget(constraints);
         }),
       ),
@@ -76,22 +76,14 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Column _mobileLandingWidget(BoxConstraints constraints) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const SizedBox(
-          height: 80,
-        ),
-        Container(
+  SizedBox _mobileLandingWidget(BoxConstraints constraints) {
+    return SizedBox.expand(
+      child: Center(
+        child: Container(
           margin: EdgeInsets.only(left: 15, right: constraints.maxWidth * 0.2),
           child: _welcomeMessage(),
         ),
-        const SizedBox(
-          height: 100,
-        ),
-      ],
+      ),
     );
   }
 
