@@ -44,7 +44,7 @@ class _LandingPageState extends State<LandingPage> {
         ],
         child: LayoutBuilder(builder: (context, constraints) {
           return constraints.maxWidth < 600
-              ? SingleChildScrollView(child: _mobileLandingWidget(constraints))
+              ? _mobileLandingWidget(constraints)
               : _pcLandingWidget(constraints);
         }),
       ),
@@ -78,33 +78,14 @@ class _LandingPageState extends State<LandingPage> {
     );
   }
 
-  Column _mobileLandingWidget(BoxConstraints constraints) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const SizedBox(
-          height: 80,
-        ),
-        Container(
+  SizedBox _mobileLandingWidget(BoxConstraints constraints) {
+    return SizedBox.expand(
+      child: Center(
+        child: Container(
           margin: EdgeInsets.only(left: 15, right: constraints.maxWidth * 0.2),
           child: _welcomeMessage(),
         ),
-        const SizedBox(
-          height: 100,
-        ),
-        Container(
-          margin: const EdgeInsets.only(right: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              _animation(constraints),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-      ],
+      ),
     );
   }
 
@@ -119,7 +100,7 @@ class _LandingPageState extends State<LandingPage> {
         children: <Widget>[
           const AutoSizeText(
             'Welcome to Attendify!',
-            maxLines: 2,
+            maxLines: null,
             minFontSize: 50,
             maxFontSize: 100,
             style: TextStyle(
@@ -131,7 +112,7 @@ class _LandingPageState extends State<LandingPage> {
           ),
           const AutoSizeText(
             "Is attendance tracking giving you headaches? Don't worry, we've got a comprehensive solution to tackle this issue! Our innovative system streamlines the process, ensuring accurate and efficient attendance management. Say goodbye to manual errors and tedious tasks. With our solution, you can enjoy seamless and hassle-free attendance tracking, allowing you to focus on what truly matters.",
-            maxLines: 5,
+            maxLines: null,
             minFontSize: 20,
             maxFontSize: 50,
           ),
