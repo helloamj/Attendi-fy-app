@@ -24,10 +24,10 @@ Attendi-fy is a Flutter app designed to help students track their attendance eff
 ## Screenshots
 
 <p align="center">
-  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/053f287b-80ea-4e28-9ba8-c2608abb91e8" width="120"  />
-  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/c705ae92-74d3-43b8-b989-8a486b125eed" width="120" /> 
-  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/047a8a75-8e37-40d2-8907-5ccb00423990" width="120" />
-  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/1e721fb5-cab9-44a7-9fda-3308bf91c5e7" width="120" />
+  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/c6946a43-30e9-4741-9bca-f8c82c20c4bf" width="120"  />
+  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/66232218-9b43-4e2e-be8e-a8334ef43f1c" width="120" /> 
+  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/c940c4bb-cedd-44b6-848c-77ff5d36d961" width="120" />
+  <img src="https://github.com/helloamj/Attendi-fy-app/assets/110400753/bd1eba33-ccc6-4a4d-8568-99c2c3893eec" width="120" />
 </p>
 
 ## Support and Contact 📧
