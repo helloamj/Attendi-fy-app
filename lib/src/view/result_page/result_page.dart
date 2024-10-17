@@ -258,12 +258,15 @@ class _ResultPageState extends State<ResultPage> {
                       : WidgetTransitionEffects.incomingSlideInFromRight(
                           duration: const Duration(seconds: 2)),
                   child: _onBackgroundContainer(
-                      index: index,
-                      child: Consumer<ResultsProvider>(
-                          builder: (context, provider, child) {
-                        return _individualGridSubjectResult(
-                            index, provider.subjects[index]);
-                      })));
+                    index: index,
+                    child: Consumer<ResultsProvider>(
+                        builder: (context, provider, child) {
+                      return _individualGridSubjectResult(
+                          index, provider.subjects[index]);
+                    }),
+                    subjectModel:
+                        Provider.of<ResultsProvider>(context).subjects[index],
+                  ));
             }))
       ],
     );
@@ -271,16 +274,12 @@ class _ResultPageState extends State<ResultPage> {
 
   Widget _individualGridSubjectResult(int index, SubjectModel subjectModel) {
     List<String> keys = [
-      "Subject Name",
-      "Subject Code",
       "Absent",
       "Present",
       "OD",
       subjectModel.toTake == 0 ? 'Can Leave' : 'To Take',
     ];
     List<String> values = [
-      subjectModel.subject,
-      subjectModel.subjectCode,
       subjectModel.absent.toString(),
       subjectModel.present.toString(),
       subjectModel.od.toString(),
@@ -374,27 +373,61 @@ class _ResultPageState extends State<ResultPage> {
     });
   }
 
-  Container _onBackgroundContainer({Widget? child, required int index}) {
-    return Container(
-      margin: const EdgeInsets.all(10),
-      width: min(500, MediaQuery.of(context).size.width),
-      height: 20.h,
-      decoration: BoxDecoration(
-          color: AppPallete.onBackground,
-          borderRadius: index.isEven
-              ? const BorderRadius.only(
-                  topLeft: Radius.circular(100),
-                  bottomLeft: Radius.circular(100),
-                  topRight: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
-                )
-              : const BorderRadius.only(
-                  topRight: Radius.circular(100),
-                  bottomRight: Radius.circular(100),
-                  topLeft: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
-                )),
-      child: child,
+  Widget _onBackgroundContainer(
+      {Widget? child, required int index, required SubjectModel subjectModel}) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        crossAxisAlignment:
+            index.isEven ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+        children: [
+          // subject name
+          Container(
+            width: min(500, MediaQuery.of(context).size.width) - 18.h,
+            decoration: BoxDecoration(
+                color: AppPallete.onBackground,
+                borderRadius: index.isEven
+                    ? const BorderRadius.only(
+                        topRight: Radius.circular(10),
+                        topLeft: Radius.circular(10),
+                      )
+                    : const BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10),
+                      )),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                subjectModel.subject,
+                style: TextStyle(
+                    color: AppPallete.primaryWhite.level1,
+                    fontSize: min(20, 3.w),
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+
+          Container(
+            width: min(500, MediaQuery.of(context).size.width),
+            height: 20.h,
+            decoration: BoxDecoration(
+                color: AppPallete.onBackground,
+                borderRadius: index.isEven
+                    ? const BorderRadius.only(
+                        topLeft: Radius.circular(100),
+                        bottomLeft: Radius.circular(100),
+                        bottomRight: Radius.circular(10),
+                      )
+                    : const BorderRadius.only(
+                        topRight: Radius.circular(100),
+                        bottomRight: Radius.circular(100),
+                        bottomLeft: Radius.circular(10),
+                      )),
+            child: child,
+          ),
+        ],
+      ),
     );
   }
 }

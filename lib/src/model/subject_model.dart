@@ -54,8 +54,7 @@ class SubjectModel {
     return SubjectModel(
         id: int.parse(data[0]),
         subjectCode: data[1],
-        subject: generateAcronym(data[2], stopWords: ["lab", "and"]) +
-            ((data[3] == 'Lab') ? ' LAB' : ''),
+        subject: data[2],
         subjectType: data[3],
         present: int.parse(data[4]),
         od: int.parse(data[5]),
